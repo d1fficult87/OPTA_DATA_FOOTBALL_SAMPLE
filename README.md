@@ -57,7 +57,7 @@ Reference (pre úplnejšie vzťahy):
 Vytvorený je model hviezdy (Star Schema) so zameraním na grain **hráč × zápas**.
 
 ### Star Schema diagram
-![Star Schema](img/star_schema.png)
+![Star Schema](img/STAR_SCHEMA.png)
 
 ### Faktová tabuľka
 **FACT_PLAYER_MATCH**
