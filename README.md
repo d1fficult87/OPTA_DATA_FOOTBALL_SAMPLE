@@ -267,7 +267,7 @@ WHERE DATE_KEY IS NULL OR GAME_ID IS NULL OR PLAYER_ID IS NULL OR TEAM_ID IS NUL
 
 ## 4️⃣ Vizualizácia dát
 
-Nižšie je 6 vizualizácií (minimálna požiadavka je 5). Pre každý graf je uvedený SQL dotaz, obrázok a interpretácia.
+Nižšie je 6 vizualizácií. Pre každý graf je uvedený SQL dotaz, obrázok a interpretácia.
 
 ### Graf 1: Top 10 strelcov (najviac gólov)
 ```sql
