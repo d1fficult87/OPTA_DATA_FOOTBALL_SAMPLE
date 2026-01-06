@@ -30,8 +30,7 @@ Dataset pochádza zo **Snowflake Marketplace**:
 
 - **Shared database:** `OPTA_DATA_FOOTBALL__SAMPLE`
 - **Schema:** `EPL`
-
-> Poznámka: Marketplace databáza je **shared** – nie je možné v nej vytvárať vlastné objekty. Preto sa údaje kopírujú do vlastnej DB ako staging tabuľky.
+  
 
 ### Prehľad použitých objektov (core + reference)
 Core (použité v ERD a transformáciách):
