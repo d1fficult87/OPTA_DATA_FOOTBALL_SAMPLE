@@ -307,7 +307,7 @@ ORDER BY pass_accuracy DESC
 LIMIT 10;
 ```
 
-**Interpretácia:** Zobrazuje hráčov s najvyššou presnosťou prihrávok, pričom filtruje hráčov s malým počtom prihrávok.
+**Interpretácia:** Graf porovnáva hráčov podľa presnosti prihrávok (pass accuracy), ktorá je vypočítaná ako podiel presných prihrávok a celkového počtu prihrávok. Zároveň je použitý filter na minimálne 50 prihrávok, aby výsledok nebol skreslený hráčmi s nízkym počtom akcií (napríklad hráč s 2 prihrávkami by mohol mať 100% presnosť, ale taký výsledok nie je reprezentatívny). Vizualizácia pomáha odhaliť hráčov, ktorí sú nielen aktívni v rozohrávke, ale dokážu si udržať aj vysokú presnosť. V praxi môže tento graf naznačiť rozdiely medzi typmi hráčov (napr. defenzívni záložníci vs. útočníci) alebo štýl hry tímu.
 
 * * *
 
@@ -331,7 +331,7 @@ ORDER BY on_target_shots DESC, total_shots DESC
 LIMIT 15;
 ```
 
-**Interpretácia:** Identifikuje hráčov, ktorí najčastejšie mieria strely na bránu.
+**Interpretácia:** Tento graf zobrazuje hráčov s najvyšším počtom striel na bránu (on-target shots) a zároveň aj celkový počet striel. Vďaka tomu je možné posúdiť nielen aktivitu hráča (koľko strieľa), ale aj presnosť zakončenia (koľko striel smerovalo na bránu). Z vizualizácie býva vidieť, že niektorí hráči majú vysoký počet striel na bránu aj pri relatívne menšom celkovom počte pokusov, čo môže naznačovať efektívne zakončenie. Naopak, hráči s veľkým počtom striel, ale nižším počtom striel na bránu môžu mať “menej presné” zakončenie. Tento graf je vhodný na rýchle porovnanie ofenzívneho štýlu hráčov.
 
 * * *
 
@@ -346,7 +346,7 @@ GROUP BY 1
 ORDER BY team_goals DESC;
 ```
 
-**Interpretácia:** Porovnanie tímov podľa celkového počtu gólov (súčet výkonov hráčov).
+**Interpretácia:** Graf zobrazuje porovnanie tímov podľa celkového počtu gólov v analyzovanom výbere. Keďže faktová tabuľka je na úrovni hráč × zápas, góly tímu vznikajú agregáciou výkonov hráčov v rámci zápasov. Vizualizácia pomáha identifikovať tímy s najvyššou ofenzívnou produktivitou. Typicky je možné pozorovať, že najlepšie tímy dosahujú výrazne viac gólov než zvyšok, čo môže súvisieť so silou útoku, štýlom hry alebo kvalitou súperov v dostupných dátach. Tento graf je vhodný ako základná “league performance” metrika pre report.
 
 * * *
 
@@ -363,7 +363,7 @@ GROUP BY 1
 ORDER BY total_shots DESC;
 ```
 
-**Interpretácia:** Scatter graf ukazuje, či vyšší počet striel tímu vedie aj k vyššiemu počtu gólov.
+**Interpretácia:** Scatter graf zobrazuje vzťah medzi počtom striel (X os) a počtom gólov (Y os) na úrovni tímov. Cieľom je zistiť, či tímy, ktoré viac strieľajú, aj viac skórujú, alebo či sú efektívnejšie tímy, ktoré síce strieľajú menej, ale premieňajú viac šancí. Z grafu býva možné identifikovať “outliers” — napríklad tím s vysokým počtom striel, ale relatívne nízkym počtom gólov (nižšia efektivita zakončenia), alebo naopak tím s menším počtom striel, ale vysokým počtom gólov (vyššia efektivita). Pridaná metrika striel na bránu môže slúžiť ako doplnkový indikátor kvality pokusov.
 
 * * *
 
@@ -378,7 +378,7 @@ GROUP BY 1
 ORDER BY team_accurate_passes DESC;
 ```
 
-**Interpretácia:** Graf porovnáva tímy podľa objemu presných prihrávok (indikátor štýlu hry / držania lopty).
+**Interpretácia:** Tento graf porovnáva tímy podľa celkového počtu presných prihrávok. Na rozdiel od presnosti prihrávok (percento) ide o metrický pohľad na objem — ktoré tímy majú najviac úspešných prihrávok. Výsledok môže naznačovať štýl hry: tímy s vyšším počtom presných prihrávok často držia loptu dlhšie, viac kombinujú a budujú útok postupne. Naopak, tímy s nižším počtom presných prihrávok môžu hrať priamočiarejšie (dlhé lopty, rýchle protiútoky) alebo môžu mať v zápasoch menej držania lopty. Graf je dobrý na porovnanie tímového “passing volume”.
 
 * * *
 
