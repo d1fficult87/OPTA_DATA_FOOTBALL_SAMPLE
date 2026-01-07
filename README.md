@@ -199,7 +199,6 @@ WITH base AS (
     pgs.PLAYER_ID,
     pgs.TEAM_ID,
     TO_DATE(g.GAME_DATE) AS GAME_DAY,
-
     pgs.GOALS,
     pgs.OWN_GOALS,
     pgs.TOTAL_SCORING_ATT,
